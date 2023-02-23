@@ -1,0 +1,15 @@
+// Font
+@import url(https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+div.container {
+    width: 100vw;
+    overflow-x: hidden;
+}

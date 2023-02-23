@@ -1,0 +1,131 @@
+@import "../../variables.scss";
+
+// Barra de navegacion
+nav {
+    display: grid;
+    grid-template-columns: min-content auto min-content min-content;
+    align-items: center;
+    padding: 1rem 1.5rem 1.2rem 1.5rem;
+    gap: 1rem;
+    background-color: $white;
+    position: relative;
+
+    // Boton carrito
+    img.cart {
+        margin: 0 0.5rem;
+    }
+
+    div.cart {
+        position: absolute;
+        top: calc(0.5rem + 61px);
+        left: 0.5rem;
+        right: 0.5rem;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        box-shadow: 0 2px 12px 1px rgba(0, 0, 0, 0.205);
+
+        h4 {
+            color: $dark;
+        }
+
+        span.empty {
+            text-align: center;
+            padding: 7rem 0;
+            font-weight: 700;
+            color: $dark2;
+        }
+
+        div.item {
+            display: grid;
+            grid-template-columns: min-content auto min-content;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+
+            img.product {
+                object-fit: cover;
+                aspect-ratio: 1/1;
+                border-radius: 6px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+                color: $dark2;
+
+                span {
+                    font-weight: 400;
+                }
+
+                span.price {
+                    display: flex;
+                    gap: 0.5rem;
+                    
+                    b {
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        button {
+            padding: 0.8rem;
+            background-color: $orange;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.2rem;
+        }
+    }
+
+    div.menu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 200ms ease-in;
+        pointer-events: none;
+        z-index: 1;
+
+        div.panel {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            height: 100vh;
+            width: 60%;
+            padding: 1.5rem;
+            transform: translateX(-100vw);
+            transition: transform 200ms ease-in;
+            gap: 1rem;
+
+            img {
+                margin-bottom: 2.5rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: $dark;
+                font-weight: 700;
+            }
+        }
+
+        div.panel.open {
+            transform: translateX(0);
+        }
+    }
+
+    div.menu.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
